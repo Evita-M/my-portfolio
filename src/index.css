@@ -1,0 +1,12 @@
+@import 'tailwindcss' prefix(tw);
+
+@theme {
+  --font-inconsolata: Inconsolata, monospace;
+  --color-primary: #ff90e8;
+  --color-border: #283853;
+}
+
+:root {
+  font-family: var(--font-inconsolata);
+  color: rgba(0, 0, 0, 0);
+}
