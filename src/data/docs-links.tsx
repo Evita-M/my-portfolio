@@ -9,7 +9,7 @@ interface DocsLinks {
 
 export const docsLinks: DocsLinks = {
   cv: {
-    url: 'https://drive.google.com/file/d/16dssUK65fbVtjhSuPRGNx6LTSLoQ3HXl/view?usp=sharing',
+    url: 'https://drive.google.com/file/d/1R30Dl775BH9tx5G6AprlqnT8GHFUSpFu/view?usp=sharing',
     label: 'CV',
   },
   uxCzechitas: {
