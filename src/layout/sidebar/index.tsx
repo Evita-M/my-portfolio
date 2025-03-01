@@ -1,7 +1,5 @@
 'use client';
-import { usePathname } from 'next/navigation';
 import { FC, useState } from 'react';
-import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import {
   Link as NavLink,
   NavLink as NavLinkComponent,
@@ -15,7 +13,6 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = ({ navLinks }) => {
-  const pathname = usePathname();
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (

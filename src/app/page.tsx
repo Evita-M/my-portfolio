@@ -1,7 +1,6 @@
 import { GradientTitle } from '@/components/gradient-title';
 import { Typewriter } from '@/components/typewriter';
 import { LinkList } from '@/modules/link-list';
-import Image from 'next/image';
 
 const links = [
   {
@@ -37,7 +36,7 @@ export default function Home() {
     <section className='flex h-full w-full flex-col justify-center pl-[10%]'>
       <div className='flex flex-col gap-20'>
         <div>
-          <p className='mb-8 text-4xl text-white'>Hi, I'm Eva</p>
+          <p className='mb-8 text-4xl text-white'>Hi, I&apos;m Eva</p>
           <Typewriter>
             <GradientTitle text='Frontend Engineer' />
           </Typewriter>

@@ -1,7 +1,6 @@
 'use client';
 import { PageHeader } from '@/components/page-header';
 import { TechCategory } from '@/components/tech-category';
-import { Bubbles } from '@/components/bubbles';
 import { techStack } from '@/data/tech-stack';
 
 export default function TechStackPageContent() {

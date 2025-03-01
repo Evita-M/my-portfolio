@@ -1,7 +1,7 @@
 import { useState, FC, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
-import { ICON_COLOR, ICON_SIZE } from '@/utils/variables';
+import { ICON_COLOR } from '@/utils/variables';
 
 export interface TechItem {
   name: string;

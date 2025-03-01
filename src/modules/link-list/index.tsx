@@ -22,7 +22,7 @@ export const LinkList: FC<LinkListProps> = ({ hiddenTitle, links }) => {
       <ul className='flex flex-col gap-8'>
         {links.map((info, index) => (
           <li key={index}>
-            <span className='block text-neutral-300'>// {info.comment}</span>
+            <span className='block text-neutral-300'>{`// ${info.comment}`}</span>
             {info.variables.map(({ name, value }, vIndex) => (
               <span key={vIndex} className='flex gap-2 text-lg font-medium'>
                 <p className='text-primary'>const</p>
@@ -30,7 +30,7 @@ export const LinkList: FC<LinkListProps> = ({ hiddenTitle, links }) => {
                 <p className='text-primary'>=</p>
                 <span className='text-tertiary'>
                   <a href={value} target='_blank' rel='noopener noreferrer'>
-                    "{value}"
+                    {`"${value}"`}
                   </a>
                 </span>
                 <span className='text-primary'>;</span>
