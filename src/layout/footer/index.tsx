@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IconCopyright, IconHeart } from '@tabler/icons-react';
-import { BAR_ICON_SIZE, ICON_COLOR } from '@/utils/variables';
+import { BAR_ICON_SIZE } from '@/utils/variables';
 
 interface FooterProps {
   copyrightYear?: number;

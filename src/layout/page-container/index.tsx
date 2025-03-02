@@ -35,7 +35,7 @@ export const PageContainer: FC<PageContainerProps> = ({ children }) => {
           <div className='blob1 absolute top-64 -right-64 h-[40rem] w-[40rem] rounded-full bg-fuchsia-500/20 blur-3xl'></div>
           <div className='blob2 absolute -bottom-64 left-64 h-[40rem] w-[40rem] rounded-full bg-blue-500/20 blur-3xl'></div>
         </div>
-        <div className='custom-scrollbar relative h-full w-full overflow-x-hidden overflow-y-auto px-8 py-6'>
+        <div className='custom-scrollbar relative h-full w-full overflow-x-hidden overflow-y-auto p-[24px] sm:px-[36px]'>
           {children}
         </div>
       </main>

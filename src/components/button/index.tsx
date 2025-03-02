@@ -36,15 +36,22 @@ export const Button: FC<ButtonProps> = ({
     </>
   );
 
-  const buttonClassName = `flex cursor-pointer justify-center min-w-[220px] px-8 py-4 items-center gap-4 border border-fuchsia-400/20
+  const buttonClassName = `flex cursor-pointer justify-center min-w-[220px] px-8 py-[12px] items-center gap-4 border border-fuchsia-400/20
     bg-slate-900 text-slate-300 transition-all duration-300
     hover:border-fuchsia-400/40 hover:bg-slate-800
   ${className}`;
 
   if (href) {
     return (
-      <a href={href} target='_blank' rel='noopener noreferrer'>
-        <button className={buttonClassName}>{buttonContent}</button>
+      <a
+        href={href}
+        target='_blank'
+        rel='noopener noreferrer'
+        className={buttonClassName}
+      >
+        <span className='flex items-center justify-center gap-4'>
+          {buttonContent}
+        </span>
       </a>
     );
   }

@@ -34,7 +34,7 @@ const Header: FC<HeaderProps> = ({ navLinks }) => {
   return (
     <header className='sticky top-0 z-50 bg-slate-950'>
       <div className='flex h-[48px]'>
-        <div className='flex w-full flex-row items-center justify-between px-4'>
+        <div className='flex w-full flex-row items-center justify-between'>
           <div className='flex w-full items-center'>
             <ul className='scrollbar-none hidden flex-1 flex-row overflow-x-auto md:flex'>
               {navLinks.map((navLink) => (
