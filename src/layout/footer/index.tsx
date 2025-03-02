@@ -12,7 +12,7 @@ export const Footer: FC<FooterProps> = ({
   author = 'Eva Matova',
 }) => {
   return (
-    <footer className='flex flex-col-reverse items-center justify-center gap-4 bg-slate-950 p-8 text-sm text-slate-300 md:flex-row md:justify-between'>
+    <footer className='flex flex-col-reverse items-center justify-center gap-4 bg-slate-950 p-8 pb-[calc(2rem_+_env(safe-area-inset-bottom))] text-sm text-slate-300 md:flex-row md:justify-between md:pb-8'>
       <div className='flex items-center gap-2'>
         <IconCopyright size={BAR_ICON_SIZE} /> {copyrightYear} {author}. All
         rights reserved.

@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon/favicon-32x32.png',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
