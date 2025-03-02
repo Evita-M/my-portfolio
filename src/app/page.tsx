@@ -5,7 +5,13 @@ import { LinkList } from '@/modules/link-list';
 const links = [
   {
     comment: 'get in touch with me by e-mail',
-    variables: [{ name: 'email', value: 'eva.matova6@gmail.com' }],
+    variables: [
+      {
+        name: 'email',
+        value: 'eva.matova6@gmail.com',
+        variant: 'email' as const,
+      },
+    ],
   },
   {
     comment: 'check out my Github page',

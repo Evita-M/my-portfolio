@@ -3,6 +3,7 @@ import { FC } from 'react';
 interface LinkVariable {
   name: string;
   value: string;
+  variant?: 'email';
 }
 
 interface LinkItem {
@@ -23,15 +24,25 @@ export const LinkList: FC<LinkListProps> = ({ hiddenTitle, links }) => {
         {links.map((info, index) => (
           <li key={index}>
             <span className='block text-neutral-300'>{`// ${info.comment}`}</span>
-            {info.variables.map(({ name, value }, vIndex) => (
+            {info.variables.map(({ name, value, variant }, vIndex) => (
               <span key={vIndex} className='flex gap-2 text-lg font-medium'>
                 <p className='text-primary'>const</p>
                 <p className='text-secondary'>{name}</p>
                 <p className='text-primary'>=</p>
                 <span className='text-tertiary'>
-                  <a href={value} target='_blank' rel='noopener noreferrer'>
-                    {`"${value}"`}
-                  </a>
+                  {variant === 'email' ? (
+                    <a
+                      href={`mailto:${value}`}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {`"${value}"`}
+                    </a>
+                  ) : (
+                    <a href={value} target='_blank' rel='noopener noreferrer'>
+                      {`"${value}"`}
+                    </a>
+                  )}
                 </span>
                 <span className='text-primary'>;</span>
               </span>
