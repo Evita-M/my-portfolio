@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ReactNode } from 'react';
 import { barlow, inconsolata } from '@/styles/fonts';
@@ -15,6 +15,12 @@ import Header from '@/layout/header';
 import Footer from '@/layout/footer';
 import { routes } from '@/routes';
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
+
 export const metadata: Metadata = {
   title: {
     default: 'Hello | Eva Matova',
@@ -30,11 +36,6 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: '/favicon/favicon-32x32.png',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    viewportFit: 'cover',
   },
   appleWebApp: {
     capable: true,
@@ -98,7 +99,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${inconsolata.variable} ${barlow.variable} flex min-h-[100vh] flex-col overflow-hidden bg-slate-950`}
+        className={`${inconsolata.variable} ${barlow.variable} flex h-[100vh] flex-col overflow-hidden bg-slate-950`}
       >
         <div className='flex flex-1 overflow-hidden'>
           <div className='hidden md:block'>
