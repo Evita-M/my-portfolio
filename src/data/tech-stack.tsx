@@ -20,6 +20,7 @@ import {
   IconTools,
   IconUserSearch,
   IconClock,
+  IconBrain,
 } from '@tabler/icons-react';
 
 export const techStack: TechCategoryType[] = [
@@ -154,6 +155,31 @@ export const techStack: TechCategoryType[] = [
       {
         name: 'WebSockets',
         icon: <IconApi size={ICON_SIZE_MD} aria-label='API icon' />,
+      },
+    ],
+  },
+  {
+    title: 'AI',
+    items: [
+      {
+        name: 'ChatGPT',
+        icon: <IconBrain size={ICON_SIZE_MD} aria-label='Brain icon' />,
+      },
+      {
+        name: 'Cursor AI',
+        icon: <IconBrain size={ICON_SIZE_MD} aria-label='Brain icon' />,
+      },
+      {
+        name: 'Groq AI',
+        icon: <IconBrain size={ICON_SIZE_MD} aria-label='Brain icon' />,
+      },
+      {
+        name: 'Microsoft Copilot',
+        icon: <IconBrain size={ICON_SIZE_MD} aria-label='Brain icon' />,
+      },
+      {
+        name: 'Gemini',
+        icon: <IconBrain size={ICON_SIZE_MD} aria-label='Brain icon' />,
       },
     ],
   },

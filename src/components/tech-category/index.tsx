@@ -1,7 +1,7 @@
 import { useState, FC, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
-import { ICON_COLOR } from '@/utils/variables';
+import { ICON_COLOR, ICON_SIZE_LG } from '@/utils/variables';
 
 export interface TechItem {
   name: string;
@@ -31,7 +31,6 @@ export const TechCategory: FC<TechCategoryProps> = ({
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
       viewport={{ once: true }}
-      className='mb-16'
     >
       <h2 className='sr-only'>{title}</h2>
       <motion.button
@@ -44,9 +43,9 @@ export const TechCategory: FC<TechCategoryProps> = ({
       >
         {title}
         {isExpanded ? (
-          <IconChevronUp size={28} className={ICON_COLOR} />
+          <IconChevronUp size={ICON_SIZE_LG} className={ICON_COLOR} />
         ) : (
-          <IconChevronDown size={28} className={ICON_COLOR} />
+          <IconChevronDown size={ICON_SIZE_LG} className={ICON_COLOR} />
         )}
       </motion.button>
       <motion.div
@@ -58,13 +57,12 @@ export const TechCategory: FC<TechCategoryProps> = ({
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className='overflow-hidden'
       >
-        <div className='grid grid-cols-1 gap-12 p-8 md:grid-cols-2 lg:grid-cols-3'>
+        <div className='grid grid-cols-1 gap-12 py-[16px] sm:grid-cols-2 md:py-[24px] lg:grid-cols-3'>
           {items.map((item) => (
             <motion.div
               key={item.name}
               initial={{ scale: 0.9, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              whileHover={{ scale: 1.02 }}
               transition={{
                 type: 'spring',
                 stiffness: 300,
@@ -75,7 +73,7 @@ export const TechCategory: FC<TechCategoryProps> = ({
               onHoverEnd={() => setHoveredItem(null)}
             >
               <motion.div
-                className='flex gap-3 border border-slate-800/50 bg-slate-900/70 p-6 backdrop-blur-xs transition-all hover:border-fuchsia-300'
+                className='flex gap-3 border border-slate-800/50 bg-slate-900/70 px-[14px] py-[12px] backdrop-blur-xs transition-all hover:border-fuchsia-300'
                 animate={{
                   boxShadow:
                     hoveredItem === item.name

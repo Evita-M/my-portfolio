@@ -6,12 +6,12 @@ import { techStack } from '@/data/tech-stack';
 export default function TechStackPageContent() {
   return (
     <>
-      <div className='relative container mx-auto max-w-[5xl] px-4'>
+      <div className='relative mx-auto xl:container'>
         <PageHeader
           title='Tech Stack'
           subtitle='...and my favorite tools and technologies'
         />
-        <section className='mt-12'>
+        <section className='flex flex-col gap-12'>
           {techStack.map(({ title, items }, index) => (
             <TechCategory
               key={title}
