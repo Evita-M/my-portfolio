@@ -10,15 +10,18 @@ export interface Link {
   href: string;
 }
 
-interface NavLinkProps {
+export interface NavLinkProps {
   link: Link;
   align?: 'center' | 'left';
+  size?: 'default' | 'lg';
   isCollapsed?: boolean;
   hasLine?: boolean;
+  onClick?: VoidFunction;
+  variant?: 'primary' | 'secondary';
 }
 
 const navLinkStyles = cva(
-  'group relative flex w-full items-center px-8 py-4 ',
+  'group relative flex w-full items-center px-8 py-5 ',
   {
     variants: {
       active: {
@@ -64,17 +67,49 @@ const labelStyles = cva(
   {
     variants: {
       active: {
-        true: 'text-white',
-        false: 'text-slate-500 group-hover:text-slate-300',
+        true: '',
+        false: '',
       },
       isCollapsed: {
         true: 'w-0 opacity-0',
         false: 'w-auto opacity-100',
       },
+      size: {
+        default: 'text-base',
+        lg: 'text-xl',
+      },
+      variant: {
+        primary: '',
+        secondary: '',
+      },
     },
+    compoundVariants: [
+      {
+        variant: 'primary',
+        active: true,
+        className: 'text-white',
+      },
+      {
+        variant: 'primary',
+        active: false,
+        className: 'text-slate-500 group-hover:text-slate-300',
+      },
+      {
+        variant: 'secondary',
+        active: true,
+        className: 'text-fuchsia-200',
+      },
+      {
+        variant: 'secondary',
+        active: false,
+        className: 'text-fuchsia-400 group-hover:text-fuchsia-200',
+      },
+    ],
     defaultVariants: {
       active: false,
       isCollapsed: false,
+      size: 'default',
+      variant: 'primary',
     },
   }
 );
@@ -84,6 +119,9 @@ export const NavLink: FC<NavLinkProps> = ({
   align,
   hasLine,
   isCollapsed,
+  size,
+  onClick,
+  variant,
 }) => {
   const { icon, label, href } = link;
   const pathname = usePathname();
@@ -98,11 +136,14 @@ export const NavLink: FC<NavLinkProps> = ({
         hasLine,
         isCollapsed,
       })}
+      onClick={onClick}
     >
       <span className='flex items-center gap-3'>
         {icon}
         {!isCollapsed && (
-          <span className={labelStyles({ active: isActive })}>{label}</span>
+          <span className={labelStyles({ active: isActive, size, variant })}>
+            {label}
+          </span>
         )}
       </span>
     </Link>

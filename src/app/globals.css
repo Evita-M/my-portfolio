@@ -46,6 +46,11 @@ html {
   letter-spacing: 0.02em;
 }
 
+button,
+a {
+  cursor: pointer;
+}
+
 @layer utilities {
   .custom-scrollbar {
     &::-webkit-scrollbar {
@@ -71,4 +76,33 @@ html {
       background-color: rgb(100 116 139 / 0.8); /* slate-500 with opacity */
     }
   }
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-swing {
+  animation: swing 2s ease-in-out infinite;
+  transform-origin: center;
 }

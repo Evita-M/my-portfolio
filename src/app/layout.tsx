@@ -96,7 +96,9 @@ export default function RootLayout({
         className={`${inconsolata.variable} ${barlow.variable} flex min-h-[100vh] flex-col overflow-hidden bg-slate-950`}
       >
         <div className='flex flex-1 overflow-hidden'>
-          <Sidebar navLinks={navLinks} />
+          <div className='hidden md:block'>
+            <Sidebar navLinks={navLinks} />
+          </div>
           <div className='flex flex-1 flex-col overflow-hidden'>
             <Header navLinks={navLinks} />
             <PageContainer>{children}</PageContainer>

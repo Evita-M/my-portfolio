@@ -19,7 +19,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
         {title}
       </h1>
       {subtitle && (
-        <p className='text-slate- border-primary relative z-10 mt-6 border-l-2 bg-gradient-to-r pl-10 text-xl font-light tracking-wider'>
+        <p className='text-slate border-primary relative z-10 mt-6 border-l-2 bg-gradient-to-r pl-10 text-xl font-light tracking-wider'>
           {subtitle}
         </p>
       )}
