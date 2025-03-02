@@ -12,7 +12,7 @@ export const Footer: FC<FooterProps> = ({
   author = 'Eva Matova',
 }) => {
   return (
-    <footer className='flex h-[5.6rem] shrink-0 items-center justify-between bg-slate-950 px-8 text-sm text-slate-300'>
+    <footer className='flex flex-col-reverse items-center justify-center gap-4 bg-slate-950 p-8 text-sm text-slate-300 md:flex-row md:justify-between'>
       <div className='flex items-center gap-2'>
         <IconCopyright size={BAR_ICON_SIZE} /> {copyrightYear} {author}. All
         rights reserved.
@@ -21,9 +21,9 @@ export const Footer: FC<FooterProps> = ({
         Built from scratch with
         <IconHeart
           size={BAR_ICON_SIZE}
-          className={ICON_COLOR}
           fill='currentColor'
           aria-label='love'
+          className='animate-swing text-fuchsia-700'
         />
         <span className='sr-only'>love</span>
       </div>

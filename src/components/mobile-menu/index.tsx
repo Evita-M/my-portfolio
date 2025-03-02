@@ -8,7 +8,7 @@ import { ICON_SIZE_LG } from '@/utils/variables';
 
 interface MobileMenuProps {
   isOpen: boolean;
-  onToggle: () => void;
+  onToggle: VoidFunction;
   navLinks: NavLinkProps[];
 }
 
@@ -21,7 +21,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({
     <div className='relative'>
       <button
         onClick={onToggle}
-        className='p-2 text-fuchsia-400 hover:text-fuchsia-200 md:hidden'
+        className='p-2 text-fuchsia-400 transition-colors duration-300 hover:text-fuchsia-200 md:hidden'
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
       >
         {isOpen ? (

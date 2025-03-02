@@ -15,7 +15,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
     <div
       className={`mb-16 py-8 ${align === 'center' ? 'text-center' : 'text-left'}`}
     >
-      <h1 className='text-8xl font-bold tracking-widest text-fuchsia-800 uppercase'>
+      <h1 className='text-8xl font-bold tracking-widest text-fuchsia-700 uppercase'>
         {title}
       </h1>
       {subtitle && (
