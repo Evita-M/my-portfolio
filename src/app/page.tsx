@@ -39,7 +39,7 @@ const links = [
 
 export default function Home() {
   return (
-    <section className='flex h-full w-full flex-col justify-center px-6 sm:px-8 md:px-[10%]'>
+    <section className='flex h-full w-full flex-col justify-center md:px-[10%]'>
       <div className='flex flex-col gap-12 sm:gap-16 md:gap-20'>
         <div>
           <p className='mb-4 text-2xl text-white sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl'>
