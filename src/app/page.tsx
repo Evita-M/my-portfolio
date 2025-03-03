@@ -21,7 +21,7 @@ const links = [
     ],
   },
   {
-    comment: 'read my articles and follow me on social media',
+    comment: 'read my articles on Medium',
     variables: [
       { name: 'mediumLink', value: 'https://medium.com/@eva.matova6' },
     ],
@@ -39,10 +39,12 @@ const links = [
 
 export default function Home() {
   return (
-    <section className='flex h-full w-full flex-col justify-center pl-[10%]'>
-      <div className='flex flex-col gap-20'>
+    <section className='flex h-full w-full flex-col justify-center px-6 sm:px-8 md:px-[10%]'>
+      <div className='flex flex-col gap-12 sm:gap-16 md:gap-20'>
         <div>
-          <p className='mb-8 text-4xl text-white'>Hi, I&apos;m Eva</p>
+          <p className='mb-4 text-2xl text-white sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl'>
+            Hi, I'm Eva
+          </p>
           <Typewriter>
             <GradientTitle text='Frontend Engineer' />
           </Typewriter>

@@ -23,28 +23,38 @@ export const LinkList: FC<LinkListProps> = ({ hiddenTitle, links }) => {
       <ul className='flex flex-col gap-8'>
         {links.map((info, index) => (
           <li key={index}>
-            <span className='block text-neutral-300'>{`// ${info.comment}`}</span>
+            <span className='block text-sm text-neutral-300 sm:text-base'>{`// ${info.comment}`}</span>
             {info.variables.map(({ name, value, variant }, vIndex) => (
-              <span key={vIndex} className='flex gap-2 text-lg font-medium'>
+              <span
+                key={vIndex}
+                className='flex flex-wrap gap-2 text-base font-medium sm:text-lg'
+              >
                 <p className='text-primary'>const</p>
                 <p className='text-secondary'>{name}</p>
                 <p className='text-primary'>=</p>
-                <span className='text-tertiary'>
+                <span className='text-tertiary break-all sm:break-normal'>
                   {variant === 'email' ? (
                     <a
                       href={`mailto:${value}`}
                       target='_blank'
                       rel='noopener noreferrer'
+                      className='transition-colors hover:text-fuchsia-400'
                     >
                       {`"${value}"`}
+                      <span className='text-primary'>;</span>
                     </a>
                   ) : (
-                    <a href={value} target='_blank' rel='noopener noreferrer'>
+                    <a
+                      href={value}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='transition-colors hover:text-fuchsia-400'
+                    >
                       {`"${value}"`}
+                      <span className='text-primary'>;</span>
                     </a>
                   )}
                 </span>
-                <span className='text-primary'>;</span>
               </span>
             ))}
           </li>
