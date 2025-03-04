@@ -38,7 +38,7 @@ export const TechCategory: FC<TechCategoryProps> = ({
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.2, delay: index * 0.1 }}
         onClick={() => setIsExpanded(!isExpanded)}
-        className='text-white-400 mb-8 flex w-full cursor-pointer items-center justify-between text-left text-3xl font-semibold focus:outline-none'
+        className='text-white-400 mb-8 flex w-full cursor-pointer items-center justify-between text-left text-xl font-semibold focus:outline-none sm:text-xl md:text-3xl'
         aria-expanded={isExpanded}
       >
         {title}
