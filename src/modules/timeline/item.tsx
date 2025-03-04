@@ -13,7 +13,6 @@ export interface TimelineItemBase {
 
 interface TimelineItemProps extends TimelineItemBase {
   index: number;
-  isLast?: boolean;
 }
 
 export const TimelineItem: FC<TimelineItemProps> = ({
@@ -24,7 +23,6 @@ export const TimelineItem: FC<TimelineItemProps> = ({
   icon,
   index,
   url,
-  isLast,
 }) => (
   <motion.div
     initial={{ x: index % 2 === 0 ? -100 : 100, opacity: 0 }}
