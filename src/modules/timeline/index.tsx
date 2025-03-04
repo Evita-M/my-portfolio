@@ -17,12 +17,7 @@ export const Timeline: FC<TimelineProps> = ({ data }) => {
         transition={{ duration: 2 }}
       />
       {data.map((item, index) => (
-        <TimelineItem
-          key={item.year}
-          {...item}
-          index={index}
-          isLast={index === data.length - 1}
-        />
+        <TimelineItem key={item.year} {...item} index={index} />
       ))}
     </section>
   );
