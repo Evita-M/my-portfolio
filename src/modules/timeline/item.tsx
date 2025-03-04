@@ -13,6 +13,7 @@ export interface TimelineItemBase {
 
 interface TimelineItemProps extends TimelineItemBase {
   index: number;
+  isLast?: boolean;
 }
 
 export const TimelineItem: FC<TimelineItemProps> = ({
@@ -23,52 +24,58 @@ export const TimelineItem: FC<TimelineItemProps> = ({
   icon,
   index,
   url,
+  isLast,
 }) => (
   <motion.div
     initial={{ x: index % 2 === 0 ? -100 : 100, opacity: 0 }}
     whileInView={{ x: 0, opacity: 1 }}
     transition={{ duration: 0.3, delay: index * 0.1 }}
     viewport={{ once: true }}
+    className='group mb-8 md:mb-16'
   >
-    <article className='flex flex-col items-start gap-3 md:flex-row'>
+    <article className='relative flex flex-col items-center gap-6 md:flex-row md:items-start md:gap-0'>
       {index % 2 === 0 ? (
         <>
-          <div className='mb-6 w-1/2 pr-16 text-right'>
-            <p className='mb-2 text-xl text-fuchsia-400'>{year}</p>
-            <h2 className='mb-4 text-2xl text-white'>{title}</h2>
+          <div className='order-2 w-full text-left md:order-1 md:w-1/2 md:pr-16 md:text-right'>
+            <p className='mb-2 text-lg text-fuchsia-300 lg:text-xl'>{year}</p>
+            <h2 className='mb-4 text-xl text-white md:text-2xl'>{title}</h2>
             {subtitle && (
               <a
                 href={url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='mb-2 cursor-pointer font-medium text-fuchsia-400 transition-colors hover:text-fuchsia-200'
+                className='mb-2 block cursor-pointer font-medium text-fuchsia-400 transition-colors hover:text-fuchsia-200'
               >
                 {subtitle}
               </a>
             )}
-            <p className='pt-4 text-left text-slate-300'>{description}</p>
+            <p className='pt-2 text-slate-300 lg:pt-4'>{description}</p>
           </div>
-          <Milestone icon={icon} />
-          <div className='w-1/2' />
+          <div className='order-1 md:order-2'>
+            <Milestone icon={icon} />
+          </div>
+          <div className='order-3 hidden w-1/2 md:block' />
         </>
       ) : (
         <>
-          <div className='w-1/2' />
-          <Milestone icon={icon} />
-          <div className='mb-6 w-1/2 pl-16 text-left'>
-            <p className='mb-2 text-xl text-fuchsia-400'>{year}</p>
-            <h2 className='mb-4 text-2xl text-white'>{title}</h2>
+          <div className='hidden w-1/2 md:block' />
+          <div>
+            <Milestone icon={icon} />
+          </div>
+          <div className='w-full text-left md:w-1/2 md:pl-16'>
+            <p className='mb-2 text-lg text-fuchsia-300 lg:text-xl'>{year}</p>
+            <h2 className='mb-4 text-xl text-white md:text-2xl'>{title}</h2>
             {subtitle && (
               <a
                 href={url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='mb-2 cursor-pointer font-medium text-fuchsia-400 transition-colors hover:text-fuchsia-200'
+                className='mb-2 block cursor-pointer font-medium text-fuchsia-400 transition-colors hover:text-fuchsia-200'
               >
                 {subtitle}
               </a>
             )}
-            <p className='pt-4 text-slate-300'>{description}</p>
+            <p className='pt-2 text-slate-300 lg:pt-4'>{description}</p>
           </div>
         </>
       )}

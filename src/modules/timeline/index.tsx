@@ -7,9 +7,15 @@ interface TimelineProps {
 
 export const Timeline: FC<TimelineProps> = ({ data }) => {
   return (
-    <section className='mx-auto max-w-[90%]'>
+    <section className='relative mx-auto lg:max-w-[90%]'>
+      <div className='absolute left-1/2 -ml-[1px] hidden h-[calc(100%-60px)] w-[2px] bg-slate-500 lg:block' />
       {data.map((item, index) => (
-        <TimelineItem key={item.year} {...item} index={index} />
+        <TimelineItem
+          key={item.year}
+          {...item}
+          index={index}
+          isLast={index === data.length - 1}
+        />
       ))}
     </section>
   );

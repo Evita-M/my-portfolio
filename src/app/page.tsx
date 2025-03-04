@@ -43,7 +43,7 @@ export default function Home() {
       <div className='flex flex-col gap-12 sm:gap-16 md:gap-20'>
         <div>
           <p className='mb-4 text-2xl text-white sm:mb-6 sm:text-3xl md:mb-8 md:text-4xl'>
-            Hi, I'm Eva
+            Hi, I&apos;m Eva
           </p>
           <Typewriter>
             <GradientTitle text='Frontend Engineer' />
